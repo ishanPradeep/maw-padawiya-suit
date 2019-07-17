@@ -1,0 +1,7 @@
+{
+  "timestamp": 1562831799267,
+  "status": 400,
+  "error": "Bad Request",
+  "message": "Required String parameter 'limit' is not present",
+  "path": "/categorys"
+}
