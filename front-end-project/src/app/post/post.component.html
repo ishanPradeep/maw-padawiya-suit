@@ -1,3 +1,26 @@
-<p>
-  post works!
-</p>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8 col-md-offset-2">
+
+        <h1>Create Post</h1>
+        <form [formGroup]="userForm" (submit)="saveUser()">
+          <label for="name">Name</label>
+          <input formControlName="name" id="name" />
+          <control-messages [control]="userForm.get('name')"></control-messages>
+
+          <label for="media">media</label>
+          <input formControlName="media" id="media" />
+          <control-messages [control]="postForm.get('media')"></control-messages>
+
+          <label for="category">Profile Description</label>
+          <textarea formControlName="category" id="category"></textarea>
+          <control-messages [control]="postForm.get('category')"></control-messages>
+
+          <button type="submit" [disabled]="!postForm.valid">Submit</button>
+        </form>
+
+      </div>
+
+    </div>
+  </div>

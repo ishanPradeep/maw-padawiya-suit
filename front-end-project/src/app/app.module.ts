@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import {Routes, RouterModule} from '@angular/router';
@@ -17,6 +18,10 @@ import { GarbaniComponent } from './garbani/garbani.component';
 import { BilidaComponent } from './bilida/bilida.component';
 import { PunchiPuthaComponent } from './punchi-putha/punchi-putha.component';
 import { ContactComponent } from './contact/contact.component';
+import { ControlMessagesComponent } from './control-messages/control-messages.component';
+import { ValidationService } from './validation.service';
+
+
 
 const routes: Routes = [
   { path : 'home', component : HomeComponent},
@@ -46,15 +51,17 @@ const routes: Routes = [
     GarbaniComponent,
     BilidaComponent,
     PunchiPuthaComponent,
-    ContactComponent
+    ContactComponent,
+    ControlMessagesComponent
   ],
   imports: [
     AngularFontAwesomeModule,
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ ValidationService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
